@@ -141,11 +141,11 @@ Change `CONFIG_LOCALVERSION="-windows-subsystem-for-android"` in `.config` to so
 
 - In step 2, there should be a `apt` after `sudo`:
    ```bash
-   sudo install build-essential flex bison libssl-dev libelf-dev git gcc curl make bc bison ca-certificates gnupg libelf-dev lsb-release software-properties-common wget libncurses-dev binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu
+   sudo apt install build-essential flex bison libssl-dev libelf-dev git gcc curl make bc bison ca-certificates gnupg libelf-dev lsb-release software-properties-common wget libncurses-dev binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu
    ```
 - In step 2, you also need to install `cpio`, or build will fail with `[kernel/kheaders_data.tar.xz] Error 127`:
    ```bash
-   apt install -y bc binutils-aarch64-linux-gnu bison build-essential ca-certificates cpio curl flex gcc gcc-aarch64-linux-gnu git gnupg libelf-dev libelf-dev libncurses-dev libssl-dev lsb-release make software-properties-common wget
+   sudo apt install -y bc binutils-aarch64-linux-gnu bison build-essential ca-certificates cpio curl flex gcc gcc-aarch64-linux-gnu git gnupg libelf-dev libelf-dev libncurses-dev libssl-dev lsb-release make software-properties-common wget
    ```
 - The real config file location is different from step 4
    - For x86_64: `configs/wsa/config-wsa-<kernel version number>` 
