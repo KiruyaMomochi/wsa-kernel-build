@@ -2,7 +2,7 @@
 
 This Dockerfile can help you to build the WSA Kernel.
 
-## How to build the kernel?
+## How to build kernel?
 
 1. Build the docker image:
    ```bash
