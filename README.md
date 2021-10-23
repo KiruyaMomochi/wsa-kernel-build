@@ -11,9 +11,9 @@ This Dockerfile can help you to build the WSA Kernel.
 2. Copy configuration if you have not configed in your kernel source:
    ```bash
    # For x86_64:
-   cp onfigs/wsa/config-wsa-<kernel version number> .config
+   cp configs/wsa/config-wsa-<kernel version number> .config
    # For arm64:
-   cp onfigs/wsa/config-wsa-arm64-<kernel version number> .config
+   cp configs/wsa/config-wsa-arm64-<kernel version number> .config
    ```
 3. Build the kernel:
    ```bash
