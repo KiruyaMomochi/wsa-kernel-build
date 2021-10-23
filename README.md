@@ -22,7 +22,7 @@ This Dockerfile can help you to build the WSA Kernel.
    # For arm64:
    docker run -v "<path to wsl kernel>:/src" -it wsa-kernel-test sh -c 'make -j$(nproc) LLVM=1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu Image'
    ```
-   Remember to replace `<path to wsl kernel>` with the path to your WSL kernel.
+   Remember to replace `<path to wsl kernel>` with the path to your WSA kernel.
 
 > - If you use selinux you can add the z or Z options to modify the selinux label of the host file or directory being mounted into the container. See [Docker Documention](https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label) for details.
 > - If you see error "... exceeds 64 characters", change `CONFIG_LOCALVERSION="-windows-subsystem-for-android"` in `.config` to something shorter.
