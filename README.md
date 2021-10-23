@@ -17,7 +17,10 @@ This Dockerfile can help you to build the WSA Kernel.
    ```
 3. Build the kernel:
    ```bash
+   # For x86_64:
    docker run -v "<path to wsl kernel>:/src" -it wsa-kernel-build
+   # For arm64:
+   docker run -v "<path to wsl kernel>:/src" -it wsa-kernel-test sh -c 'make -j$(nproc) LLVM=1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu Image'
    ```
    Remember to replace `<path to wsl kernel>` with the path to your WSL kernel.
 
