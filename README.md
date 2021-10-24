@@ -93,7 +93,15 @@ Depends on your computer architecture, you need to decompress one of them. For m
 
 ### Modify the package
 
-In the decompressed package folder, remove `[Content_Types].xml`, `AppxBlockMap.xml`, `AppxSignature.p7x` and full `AppxMetadata` directory. Then modify `AppxManifest.xaml` by 
+In the decompressed package folder, remove `[Content_Types].xml`, `AppxBlockMap.xml`, `AppxSignature.p7x` and full `AppxMetadata` directory. 
+
+If you have installed the official WSA before, you need to uninstall before continuing. 
+Or you can use a different identity.
+
+<details>
+<Summary>(Optional) Use a different identity</summary>
+
+Then modify `AppxManifest.xaml` by 
 - Change `Package.Identity.Publisher` with something you like
 - Remove the following nodes in `Package.Capabilities`
     - whose Name contains `customInstallActions`
@@ -101,9 +109,11 @@ In the decompressed package folder, remove `[Content_Types].xml`, `AppxBlockMap.
 - In `Package.Extensions`, remove the full `Extension` node whose Category like `windows.customInstall`
 Then save the file.
 
+</details>
+
 ### Test the package
 
-Now we test if the package we modified can be installed and run correctly, if something not works properly, it's better to pause and find what goes wrong.
+Now we test if the package can be installed and run correctly, if something not works properly, it's better to pause and find what goes wrong.
 
 Do it in **PowerShell (Admin)**
 ```powershell
@@ -170,8 +180,5 @@ cp $SU_BASE/superuser.c $KERNEL_BASE/superuser.c
 
 ### Why my WSA Settings doesn't display my language?
 
-You need to install Resource Packages for your language.
-
-In our extracted msixbundle folder, there are many `*.msix` files.
-Find the one that contains your language, patch it by the same method as the main package. (See "Modify the package" section),
-then register it in PowerShell (Admin).
+We need to find a way install Resource Packages for your language. \
+**TBD.**
