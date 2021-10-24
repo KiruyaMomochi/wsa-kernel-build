@@ -4,9 +4,9 @@ This Dockerfile can help you to build the WSA Kernel.
 
 ## How to build kernel?
 
-1. Build the docker image:
+1. Pull the docker image:
    ```bash
-   docker build -t wsa-kernel-build .
+   docker pull ghcr.io/kiruyamomochi/wsa-kernel-build:main
    ```
 2. Copy configuration if you have not configed in your kernel source:
    ```bash
@@ -18,9 +18,9 @@ This Dockerfile can help you to build the WSA Kernel.
 3. Build the kernel:
    ```bash
    # For x86_64:
-   docker run -v "<path to wsl kernel>:/src" -it wsa-kernel-build
+   docker run --rm -v "<path to wsl kernel>:/src" -it ghcr.io/kiruyamomochi/wsa-kernel-build:main
    # For arm64:
-   docker run -v "<path to wsl kernel>:/src" -it wsa-kernel-test sh -c 'make -j$(nproc) LLVM=1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu Image'
+   docker run --rm -v "<path to wsl kernel>:/src" -it ghcr.io/kiruyamomochi/wsa-kernel-build:main sh -c 'make -j$(nproc) LLVM=1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu Image'
    ```
    Remember to replace `<path to wsl kernel>` with the path to your WSA kernel.
 
@@ -121,7 +121,7 @@ Open your WSA, and try run it by clicking or tapping the first "Files" option. I
 
 If everything looks right, now you can replace the kernel!
 
-Go to the folder that we modified files before, replace the file called `kernel` with your kernel.
+Go to the folder that we modified files before, replace the file `kernel` under `Tools` with your kernel.
 Then register the package again by do it in **PowerShell (Admin)**
 ```powershell
 Add-AppxPackage -Register <path to your AppxManifest.xaml file>
