@@ -151,3 +151,19 @@ Change `CONFIG_LOCALVERSION="-windows-subsystem-for-android"` in `.config` to so
    - For x86_64: `configs/wsa/config-wsa-<kernel version number>` 
    - For ARM: `configs/wsa/config-wsa-arm64-<kernel version number>` 
 - All spaces in WSA-README are incorrect, if you copy command from it, replace all spaces with ` `.
+
+### "Help! I can't compile after patching the kernel [WSA-Kernel-SU](https://github.com/LSPosed/WSA-Kernel-SU)"
+
+Are you copying those files? You should **append** (`>>`) them to corresponding file in kernel source, only copy file that does not exist in kernel.
+
+❌ ~~`cp -r WSA-Kernel-SU/drivers/* WSA-Linux-Kernel/drivers/`~~
+
+⭕
+```bash
+KERNEL_BASE=$KERNEL/drivers/base
+SU_BASE=$SU/drivers/base
+
+grep -q ASSISTED_SUPERUSER $KERNEL_BASE/Kconfig || cat $SU_BASE/Kconfig >> $KERNEL_BASE/Kconfig
+grep -q ASSISTED_SUPERUSER $KERNEL_BASE/Makefile || cat $SU_BASE/Makefile >> $KERNEL_BASE/Makefile
+cp $SU_BASE/superuser.c $KERNEL_BASE/superuser.c
+```
