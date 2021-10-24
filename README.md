@@ -2,6 +2,8 @@
 
 This Dockerfile can help you to build the WSA Kernel.
 
+Building the kernel on GitHub Actions takes about 30 minutes.
+
 ## How to build kernel?
 
 1. Pull the docker image:
@@ -180,5 +182,5 @@ cp $SU_BASE/superuser.c $KERNEL_BASE/superuser.c
 
 ### Why my WSA Settings doesn't display my language?
 
-We need to find a way install Resource Packages for your language. \
-**TBD.**
+These files are in Resource Packages for your language.
+We may need to find a way to merge them.
