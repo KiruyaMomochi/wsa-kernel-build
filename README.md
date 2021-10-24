@@ -167,3 +167,11 @@ grep -q ASSISTED_SUPERUSER $KERNEL_BASE/Kconfig || cat $SU_BASE/Kconfig >> $KERN
 grep -q ASSISTED_SUPERUSER $KERNEL_BASE/Makefile || cat $SU_BASE/Makefile >> $KERNEL_BASE/Makefile
 cp $SU_BASE/superuser.c $KERNEL_BASE/superuser.c
 ```
+
+### Why my WSA Settings doesn't display my language?
+
+You need to install Resource Packages for your language.
+
+In our extracted msixbundle folder, there are many `*.msix` files.
+Find the one that contains your language, patch it by the same method as the main package. (See "Modify the package" section),
+then register it in PowerShell (Admin).
