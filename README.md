@@ -123,9 +123,14 @@ Add-AppxPackage -Register <path to your AppxManifest.xaml file>
 ```
 > You need to turn on **developer mode**. If you are not sure, use `Show-WindowsDeveloperLicenseRegistration` in PowerShell to check it.
 
+<details>
+<Summary>(Optional) Use a different identity</summary>
+
 After adding, the new package will exist in start menu. It may confuse you that there are two WSA apps, but yours one should not contain ratings in the app context menu.
 
 ![Search Android in start menu, the one you installed doesn't have rating option](images/which-wsa.png)
+
+</details>
 
 Open your WSA, and try run it by clicking or tapping the first "Files" option. If everything goes right, you can see a Files window after it loaded. But if you found it closes itself, something maybe wrong.
 
