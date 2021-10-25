@@ -50,6 +50,8 @@ $wsaKernel.url
 If you have installed the official WSA before, you need to **uninstall** before continuing. 
 Or you can use a different identity, described in "(Optional) Use a different identity" section.
 
+You can use script `fetch.ps1` at [KiruyaMomochi/wsa-tools](https://github.com/KiruyaMomochi/wsa-tools) to download and decompress.
+
 ### Download WSA package
 
 First, download package of WSA.
