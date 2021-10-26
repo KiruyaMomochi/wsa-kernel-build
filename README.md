@@ -98,12 +98,6 @@ In the decompressed package folder, remove `[Content_Types].xml`, `AppxBlockMap.
 
 Now we test if the package can be installed and run correctly, if something not works properly, it's better to pause and find what goes wrong.
 
-Do it in **PowerShell (Admin)**
-```powershell
-Add-AppxPackage -Register <path to your AppxManifest.xaml file>
-```
-> You need to turn on **developer mode**. If you are not sure, use `Show-WindowsDeveloperLicenseRegistration` in PowerShell to check it.
-
 Open your WSA, and try run it by clicking or tapping the first "Files" option. If everything goes right, you can see a Files window after it loaded. But if you found it closes itself, something maybe wrong.
 
 ### Replace the kernel
